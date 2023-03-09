@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kubra\\OneDrive\\Masaüstü\\microservicesinstance\\MiniProject\\MiniProject\\MiniProject.csproj": {}
+    "C:\\Users\\kubra\\OneDrive\\Masaüstü\\microservicesinstance\\Microservices_Mini_Project\\MiniProject\\MiniProject\\MiniProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kubra\\OneDrive\\Masaüstü\\microservicesinstance\\MiniProject\\MiniProject\\MiniProject.csproj": {
+    "C:\\Users\\kubra\\OneDrive\\Masaüstü\\microservicesinstance\\Microservices_Mini_Project\\MiniProject\\MiniProject\\MiniProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\microservicesinstance\\MiniProject\\MiniProject\\MiniProject.csproj",
+        "projectUniqueName": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\microservicesinstance\\Microservices_Mini_Project\\MiniProject\\MiniProject\\MiniProject.csproj",
         "projectName": "MiniProject",
-        "projectPath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\microservicesinstance\\MiniProject\\MiniProject\\MiniProject.csproj",
+        "projectPath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\microservicesinstance\\Microservices_Mini_Project\\MiniProject\\MiniProject\\MiniProject.csproj",
         "packagesPath": "C:\\Users\\kubra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\microservicesinstance\\MiniProject\\MiniProject\\obj\\",
+        "outputPath": "C:\\Users\\kubra\\OneDrive\\Masaüstü\\microservicesinstance\\Microservices_Mini_Project\\MiniProject\\MiniProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages",
@@ -47,52 +47,17 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[7.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.3, )"
-            },
-            "Microsoft.Extensions.DependencyInjection": {
-              "target": "Package",
-              "version": "[7.0.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     }
