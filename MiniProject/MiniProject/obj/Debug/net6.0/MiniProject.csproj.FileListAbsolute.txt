@@ -162,3 +162,8 @@ C:\Users\kubra\OneDrive\Masaüstü\microservicesinstance\Microservices_Mini_Proj
 C:\Users\kubra\OneDrive\Masaüstü\microservicesinstance\Microservices_Mini_Project\MiniProject\MiniProject\obj\Debug\net6.0\MiniProject.pdb
 C:\Users\kubra\OneDrive\Masaüstü\microservicesinstance\Microservices_Mini_Project\MiniProject\MiniProject\obj\Debug\net6.0\MiniProject.genruntimeconfig.cache
 C:\Users\kubra\OneDrive\Masaüstü\microservicesinstance\Microservices_Mini_Project\MiniProject\MiniProject\obj\Debug\net6.0\ref\MiniProject.dll
+C:\Users\kubra\OneDrive\Masaüstü\microservicesinstance\Microservices_Mini_Project\MiniProject\MiniProject\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\kubra\OneDrive\Masaüstü\microservicesinstance\Microservices_Mini_Project\MiniProject\MiniProject\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\kubra\OneDrive\Masaüstü\microservicesinstance\Microservices_Mini_Project\MiniProject\MiniProject\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\kubra\OneDrive\Masaüstü\microservicesinstance\Microservices_Mini_Project\MiniProject\MiniProject\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\kubra\OneDrive\Masaüstü\microservicesinstance\Microservices_Mini_Project\MiniProject\MiniProject\obj\Debug\net6.0\MiniProject.MvcApplicationPartsAssemblyInfo.cs

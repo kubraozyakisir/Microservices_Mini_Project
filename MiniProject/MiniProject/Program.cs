@@ -3,13 +3,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using MiniProject.Models;
+using MiniProject.Repository;
+using MiniProject.Repository.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("AppDb");
 builder.Services.AddTransient<DataSeeder>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddDbContext<EmployeeDbContext>(x=>x.UseSqlServer(connectionString));
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
+app.UseSwaggerUI();
 
 if (args.Length == 1 && args[0].ToLower() == "seeddata")
     SeedData(app);
@@ -47,26 +55,25 @@ if (app.Environment.IsDevelopment())
 
 //}));
 //altta fromservices ayarlamalarý için miniprojectte langversion ekleriz.
-app.MapGet("/employee/{id}",([FromServices] EmployeeDbContext db,string id)=>
+
+app.UseSwagger(x=>x.SerializeAsV2=true);
+app.MapGet("/employee/{id}",([FromServices] IEmployeeRepository db,string id)=>
 {
-    return db.Employee.Where(x => x.IdEmployee == id).FirstOrDefault();
+    return db.GetEmployee(id);
 });
 
-app.MapGet("/employees", ([FromServices] EmployeeDbContext db) =>
+app.MapGet("/employees", ([FromServices] IEmployeeRepository db) =>
 {
-    return db.Employee.ToList();
+    return db.GetAll();
 });
-app.MapPut("/employee/{id}", ([FromServices] EmployeeDbContext db, Employee employee) =>
+app.MapPut("/employee/{id}", ([FromServices] IEmployeeRepository db, Employee employee) =>
 {
-    db.Employee.Update(employee);
-    db.SaveChanges();
-    return db.Employee.Where(x => x.IdEmployee == employee.IdEmployee).FirstOrDefault();
+    return db.Update(employee);
 });
-app.MapPost("/employee", ([FromServices] EmployeeDbContext db, Employee employee) =>
+app.MapPost("/employee", ([FromServices] IEmployeeRepository db, Employee employee) =>
 {
-    db.Employee.Add(employee);
-    db.SaveChanges();
-    return db.Employee.ToList();
+
+    return db.Add(employee);
 });
 //app.MapGet("/employee/{id}", async(http)=>
 //{
