@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -28,17 +29,17 @@ if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
-app.MapGet("/", (Func<string>)(() => "Hello World!"));
+//app.MapGet("/", (Func<string>)(() => "Hello World!"));
 
-app.MapGet("/employee", (Func<Employee>)(() => {
+//app.MapGet("/employee", (Func<Employee>)(() => {
 
-    return new Employee()
-    {
-        IdEmployee = "500",
-        Citizenship = "TC",
-        EmployeeName = "CAN",
-    };
-    }));
+//    return new Employee()
+//    {
+//        IdEmployee = "500",
+//        Citizenship = "TC",
+//        EmployeeName = "CAN",
+//    };
+//    }));
 //app.MapGet("/employees", (Func<List<Employee>>)(() =>
 //{
 
@@ -46,11 +47,26 @@ app.MapGet("/employee", (Func<Employee>)(() => {
 
 //}));
 //altta fromservices ayarlamalarý için miniprojectte langversion ekleriz.
+app.MapGet("/employee/{id}",([FromServices] EmployeeDbContext db,string id)=>
+{
+    return db.Employee.Where(x => x.IdEmployee == id).FirstOrDefault();
+});
+
 app.MapGet("/employees", ([FromServices] EmployeeDbContext db) =>
 {
-
     return db.Employee.ToList();
-
+});
+app.MapPut("/employee/{id}", ([FromServices] EmployeeDbContext db, Employee employee) =>
+{
+    db.Employee.Update(employee);
+    db.SaveChanges();
+    return db.Employee.Where(x => x.IdEmployee == employee.IdEmployee).FirstOrDefault();
+});
+app.MapPost("/employee", ([FromServices] EmployeeDbContext db, Employee employee) =>
+{
+    db.Employee.Add(employee);
+    db.SaveChanges();
+    return db.Employee.ToList();
 });
 //app.MapGet("/employee/{id}", async(http)=>
 //{
